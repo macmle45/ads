@@ -15,6 +15,9 @@ class Stack:
         return self.stack.pop()
 
     def peek(self):
+        if self.is_empty():
+            return f"Stack is empty"
+            
         return self.stack[len(self.stack)-1]
 
     def __str__(self) -> str:
