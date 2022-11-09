@@ -1,7 +1,7 @@
 from lds import Stack
 
 
-def main():
+def stack_opeartions():
     my_stack = Stack()
     
     print(my_stack.pop())
@@ -21,6 +21,27 @@ def main():
     my_stack.pop()
     print(f"Stack: {my_stack}")
 
+    print(f"Peek: {my_stack.peek()}")
+
+
+def reverse_word():
+    word = 'ala ma kota'
+    reversed_word = ''
+
+    stack_word = Stack()
+
+    for letter in word:
+        stack_word.push(letter)
+
+    for _ in word:
+        reversed_word += f'{stack_word.pop()}'
+
+    print(reversed_word)
+
+
+def main():
+    stack_opeartions()
+    # reverse_word()
 
 
 if __name__ == '__main__':
