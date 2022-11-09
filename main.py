@@ -1,4 +1,4 @@
-from lds import Stack
+from lds import Stack, Queue
 
 
 def stack_opeartions():
@@ -39,9 +39,34 @@ def reverse_word():
     print(reversed_word)
 
 
+def queue_operations():
+    my_queue = Queue()
+
+    my_queue.enqueue(1)
+    my_queue.enqueue(2)
+    my_queue.enqueue(3)
+
+    print(f"Current queue: {my_queue}")
+    print(f"Size: {my_queue.size}\n")
+
+
+    print(f'Dequeue element: {my_queue.dequeue()}\nQueue: {my_queue}')
+    print(f"Size: {my_queue.size}\n")
+
+    print(f'Dequeue element: {my_queue.dequeue()}\nQueue: {my_queue}')
+    print(f"Size: {my_queue.size}\n")
+
+    print(f'Dequeue element: {my_queue.dequeue()}\nQueue: {my_queue}')
+    print(f"Size: {my_queue.size}\n")
+
+    print(f'Dequeue element: {my_queue.dequeue()}\nQueue: {my_queue}')
+    print(f"Size: {my_queue.size}\n")
+
+
 def main():
-    stack_opeartions()
+    # stack_opeartions()
     # reverse_word()
+    queue_operations()
 
 
 if __name__ == '__main__':
