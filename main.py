@@ -1,4 +1,4 @@
-from lds import Stack, Queue
+from lds import Stack, Queue, CircularQueue
 
 
 def stack_opeartions():
@@ -63,10 +63,31 @@ def queue_operations():
     print(f"Size: {my_queue.size}\n")
 
 
+def circular_queue_operations():
+    cq = CircularQueue(5)
+
+    cq.enqueue(1)
+    cq.enqueue(2)
+    cq.enqueue(3)
+    cq.enqueue(4)
+    cq.enqueue(5)
+
+    print(f'Initial circular queue...\n{cq}')
+
+    cq.dequeue()
+
+    print(f'After dequeue...\n{cq}')
+
+    cq.enqueue(6)
+
+    print(f'After enqueue...\n{cq}')
+
+
 def main():
     # stack_opeartions()
     # reverse_word()
-    queue_operations()
+    # queue_operations()
+    circular_queue_operations()
 
 
 if __name__ == '__main__':
