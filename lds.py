@@ -206,3 +206,14 @@ class Deque:
 
     def __str__(self) -> str:
         return f'{self.items}'
+
+
+class Node:
+    def __init__(self, item):
+        self.item = item
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
