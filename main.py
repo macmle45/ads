@@ -1,4 +1,7 @@
-from lds import Stack, Queue, CircularQueue, PriorityQueue
+from lds import Stack, Queue, CircularQueue, PriorityQueue, Deque
+
+
+from collections import deque
 
 
 def stack_opeartions():
@@ -117,12 +120,30 @@ def priority_queue_operations():
     print(f'Queue after extract (Max-Heap) operation: {pq}\n')
 
 
+def deque_operations():
+    my_deque = Deque()
+
+    my_deque.addFront(1)
+    my_deque.addFront(2)
+    my_deque.addRear(4)
+
+    print(f'Deque init...\n{my_deque}\n')
+
+    my_deque.removeFront()
+    print(f'Deque after deleting from front: {my_deque}\n')
+
+    my_deque.removeRear()
+    print(f'Deque after deleting from rear: {my_deque}\n')
+
+
+
 def main():
     # stack_opeartions()
     # reverse_word()
     # queue_operations()
     # circular_queue_operations()
-    priority_queue_operations()
+    # priority_queue_operations()
+    deque_operations()
 
 
 if __name__ == '__main__':
