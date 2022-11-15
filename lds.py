@@ -160,10 +160,21 @@ class PriorityQueue:
 
     @property
     def peek(self):
-        pass
+        """
+        Return root node
+        """
+        return self.array[0]
 
-    def extract(self, type):
-        pass
+    @property
+    def extract(self):
+        """
+        Extract-Max: return the node with maximum value after removing it from a Max Heap
+        Extract-Min: return the node with minimum value after removing it from a Min Heap
+        """
+        rootNode = self.array[0]
+        self.removeNode(rootNode)
+
+        return rootNode
 
     def __str__(self) -> str:
         return f'{self.array}'
