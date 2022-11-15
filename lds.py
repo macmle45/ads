@@ -58,6 +58,7 @@ class CircularQueue:
         self.head = -1
         self.tail = -1
 
+    # add to the queue
     def enqueue(self, element):
         if (self.tail + 1) % self.size == self.head:
             return f'The circular queue is full'
@@ -69,6 +70,7 @@ class CircularQueue:
             self.tail = (self.tail + 1) % self.size
             self.circular_queue[self.tail] = element
 
+    # remove element front element from the queue
     def dequeue(self):
         if self.head == -1:
             return f'The circular queue is empty'
@@ -81,7 +83,7 @@ class CircularQueue:
             temp = self.circular_queue[self.head]
             self.head = (self.head + 1) % self.size
             return temp
-
+    
     def __str__(self) -> str:
         if self.head == -1:
             return f'Circular queue is empty'
