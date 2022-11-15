@@ -1,7 +1,12 @@
-from lds import Stack, Queue, CircularQueue, PriorityQueue, Deque
-
-
-from collections import deque
+from lds import (
+                    Stack, 
+                    Queue, 
+                    CircularQueue, 
+                    PriorityQueue, 
+                    Deque,
+                    Node,
+                    LinkedList
+                )
 
 
 def stack_opeartions():
@@ -136,6 +141,22 @@ def deque_operations():
     print(f'Deque after deleting from rear: {my_deque}\n')
 
 
+def linked_list_operations():
+    linked_list = LinkedList()
+
+    # creating nodes
+    linked_list.head = Node(1)
+    second_element = Node(2)
+    third_element = Node(3)
+
+    # linking nodes = creating linked list
+    linked_list.head.next = second_element
+    second_element.next = third_element
+    third_element.next = None
+    
+
+
+
 
 def main():
     # stack_opeartions()
@@ -143,7 +164,8 @@ def main():
     # queue_operations()
     # circular_queue_operations()
     # priority_queue_operations()
-    deque_operations()
+    # deque_operations()
+    linked_list_operations()
 
 
 if __name__ == '__main__':
