@@ -178,3 +178,31 @@ class PriorityQueue:
 
     def __str__(self) -> str:
         return f'{self.array}'
+
+
+class Deque:
+    def __init__(self):
+        self.items = []
+
+    @property
+    def __size(self) -> int:
+        return len(self.items)
+
+    def addFront(self, el):
+        return self.items.insert(0, el)
+
+    def addRear(self, el):
+        return self.items.append(el)
+
+    def removeFront(self):
+        if self.__size == 0:
+            return 'Queue is empty'
+        return self.items.pop(0)
+
+    def removeRear(self):
+        if self.__size == 0:
+            return 'Queue is empty'
+        return self.items.pop()
+
+    def __str__(self) -> str:
+        return f'{self.items}'
