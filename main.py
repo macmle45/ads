@@ -96,17 +96,25 @@ def circular_queue_operations():
 def priority_queue_operations():
     pq = PriorityQueue()
 
-    pq.insert(5)
-    pq.insert(3)
-    pq.insert(7)
     pq.insert(1)
+    pq.insert(2)
+    pq.insert(3)
     pq.insert(4)
+    pq.insert(5)
+    pq.insert(9)
 
     print(f"Init queue...\n{pq}\n")
 
-    pq.removeNode(7)
+    pq.insert(7)
+    print(f'Queue after insert (7) operation: {pq}\n')
 
-    print(f"After deletion of element '7'...\n{pq}")
+    pq.removeNode(3)
+    print(f'Queue after delete (3) operation: {pq}\n')
+
+    print(f'Peek: {pq.peek}\n')
+
+    print(f'Extract: {pq.extract}\n')
+    print(f'Queue after extract (Max-Heap) operation: {pq}\n')
 
 
 def main():
