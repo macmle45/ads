@@ -1,4 +1,4 @@
-from lds import Stack, Queue, CircularQueue
+from lds import Stack, Queue, CircularQueue, PriorityQueue
 
 
 def stack_opeartions():
@@ -82,12 +82,39 @@ def circular_queue_operations():
 
     print(f'After enqueue...\n{cq}')
 
+    print(f'{cq.dequeue()}')
+    cq.enqueue(7)
+
+    print(cq)
+
+    print(f'{cq.dequeue()}')
+    cq.enqueue(8)
+
+    print(cq)
+
+
+def priority_queue_operations():
+    pq = PriorityQueue()
+
+    pq.insert(5)
+    pq.insert(3)
+    pq.insert(7)
+    pq.insert(1)
+    pq.insert(4)
+
+    print(f"Init queue...\n{pq}\n")
+
+    pq.removeNode(7)
+
+    print(f"After deletion of element '7'...\n{pq}")
+
 
 def main():
     # stack_opeartions()
     # reverse_word()
     # queue_operations()
-    circular_queue_operations()
+    # circular_queue_operations()
+    priority_queue_operations()
 
 
 if __name__ == '__main__':
