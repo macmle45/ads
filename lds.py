@@ -217,3 +217,28 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
+
+    def insert(self, data, to_end=False):       
+        pass
+
+    def delete(self):
+        pass
+
+    def serach_list(self):
+        pass
+
+    def sort_list(self):
+        pass
+
+    # traverse
+    def __str__(self) -> str:
+        element = self.head
+        traverse_result = '[head]-->'
+
+        while element != None:
+            traverse_result += f'[{element.item}]-->'
+            element = element.next
+
+        traverse_result += '[null]'
+
+        return traverse_result
