@@ -218,8 +218,28 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def insert(self, data, to_end=False):       
+    def insert_front(self, data):       
+        new_item = Node(data)
+        new_item.next = self.head
+        self.head = new_item
+
+    def insert_rear(self, data):
+        new_item = Node(data)
+
+        if self.head == None:
+            self.head = new_item
+        else:
+            element = self.head
+
+            # traverse to the last element of linked list
+            while element.next:
+                element = element.next
+            
+            element.next = new_item
+
+    def insert_middle(self, data, position):
         pass
+            
 
     def delete(self):
         pass
