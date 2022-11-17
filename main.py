@@ -144,17 +144,56 @@ def deque_operations():
 def linked_list_operations():
     linked_list = LinkedList()
 
-    # creating nodes
-    linked_list.head = Node(1)
-    second_element = Node(2)
-    third_element = Node(3)
+    linked_list.insert_front(1)
+    linked_list.insert_front(2)
+    linked_list.insert_front(3)
+    linked_list.insert_front(4)
+    linked_list.insert_front(5)
 
-    # linking nodes = creating linked list
-    linked_list.head.next = second_element
-    second_element.next = third_element
-    third_element.next = None
+    print(f'Init linked list...\n{linked_list}\n')
     
+    linked_list.insert_middle(7, 2)
+    print(f'Insert element 7 at index 2\n{linked_list}\n')
 
+    linked_list.insert_middle(3, 2)
+    print(f'Insert element 3 at index 2\n{linked_list}\n')
+
+    linked_list.insert_middle(5, 2)
+    print(f'Insert element 5 at index 2\n{linked_list}\n')
+
+    linked_list.insert_middle(9, 2)
+    print(f'Insert element 9 at index 2\n{linked_list}\n')
+
+    linked_list.insert_middle(11, 3)
+    print(f'Insert element 11 at index 3\n{linked_list}\n')
+
+    linked_list.delete_front()
+    print(f'Delete element at front\n{linked_list}\n')
+
+    linked_list.delete_rear()
+    print(f'Delete element from rear\n{linked_list}\n')
+
+    linked_list.delete_middle(1)
+    print(f'Delete element at index 1\n{linked_list}\n')
+    
+    linked_list.insert_middle(11, 1)
+    print(f'Insert element 11 at index 1\n{linked_list}\n')
+
+    linked_list.insert_middle(5, 2)
+    print(f'Insert element 5 at index 2\n{linked_list}\n')
+
+    linked_list.insert_middle(9, 4)
+    print(f'Insert element 9 at index 4\n{linked_list}\n')
+
+    print(f'Linked list length: {linked_list.length}\n')
+
+    print(f'Searching element 56: {linked_list.search_list(56)}\n')
+    print(f'Searching element 11: {linked_list.search_list(11)}\n')
+
+    linked_list.sort_list()
+    print(f'Sorted:\n{linked_list}\n')
+
+    print(linked_list.get_index(5))
 
 
 
