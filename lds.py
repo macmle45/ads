@@ -280,7 +280,7 @@ class LinkedList:
 
         element.next = element.next.next
 
-    def serach_list(self, data):
+    def search_list(self, data):
         current = self.head
 
         while current != None:
@@ -292,7 +292,23 @@ class LinkedList:
         return False
 
     def sort_list(self):
-        pass
+        current = self.head
+        index = None
+
+        if current is None:
+            return
+        else:
+            while current is not None:
+                index = current.next
+
+                while index is not None:
+                    if current.item > index.item:
+
+                        # swap
+                        current.item, index.item = index.item, current.item
+                
+                    index = index.next
+                current = current.next
 
     # traverse
     def __str__(self) -> str:
