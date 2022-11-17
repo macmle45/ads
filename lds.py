@@ -269,6 +269,16 @@ class LinkedList:
 
         element.next = None
 
+    def delete_middle(self, position):
+        element = self.head
+        counter = 1
+
+        while counter < position:
+            if element.next != None:
+                element = element.next
+
+        element.next = element.next.next
+
     def serach_list(self):
         pass
 
