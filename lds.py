@@ -346,3 +346,41 @@ class LinkedList:
             counter += 1
 
         return False
+
+
+class DoubleLinkedNode:
+    def __init__(self, item):
+        self.prev = None
+        self.next = None
+        self.item = item
+
+
+class DoubleLinkedList:
+    def __init__(self) -> None:
+        self.head = None
+
+    def insert_front(self, data):
+        new_item = DoubleLinkedNode(data)
+
+        new_item.prev = None
+        new_item.next = self.head
+        
+        if self.head is not None:
+            new_item.next.prev = new_item
+
+        self.head = new_item
+
+
+    def __str__(self) -> str:
+        double_linked_list = '[head]-->'
+        element = self.head
+
+        while element is not None:
+            double_linked_list += f'[{element.item}]-->'
+            element = element.next
+
+        double_linked_list += '-->[null]'
+
+        return double_linked_list
+        
+
