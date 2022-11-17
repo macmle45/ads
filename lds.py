@@ -268,11 +268,11 @@ class LinkedList:
 
         element.next = None
 
-    def delete_middle(self, position):
+    def delete_middle(self, index):
         element = self.head
         counter = 1
 
-        while counter < position:
+        while counter < index:
             if element.next != None:
                 element = element.next
 
@@ -280,8 +280,16 @@ class LinkedList:
 
         element.next = element.next.next
 
-    def serach_list(self):
-        pass
+    def serach_list(self, data):
+        current = self.head
+
+        while current != None:
+            if current.item == data:
+                return True
+            else:
+                current = current.next
+        
+        return False
 
     def sort_list(self):
         pass
