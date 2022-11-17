@@ -237,26 +237,25 @@ class LinkedList:
             
             element.next = new_item
 
-    def insert_middle(self, data, position):
+    def insert_middle(self, data, index):
         # list is empty
-        # if not self.head:
-        #     self.head = Node(data)
-        # else:
-        #     new_item = Node(data)
+        if not self.head:
+            self.head = Node(data)
+        else:
+            new_item = Node(data)
 
-        #     # traverse to element at given position
-        #     counter = 1
-        #     element = self.head
+            # traverse to element at given position
+            element = self.head
+            counter = 1
 
-        #     while counter < position:
-        #         if element.next != None:
-        #             element = element.next
+            while counter < index:
+                if element.next != None:
+                    element = element.next
                 
-        #         counter += 1
+                counter += 1
                 
-        #     new_item.next = element.next
-        #     element.next = new_item
-        pass
+            new_item.next = element.next
+            element.next = new_item
 
     def delete_front(self):
         self.head = self.head.next
@@ -276,6 +275,8 @@ class LinkedList:
         while counter < position:
             if element.next != None:
                 element = element.next
+
+            counter += 1
 
         element.next = element.next.next
 
@@ -297,3 +298,15 @@ class LinkedList:
         traverse_result += '[null]'
 
         return traverse_result
+
+    @property
+    def length(self):
+        counter = 0
+        element = self.head
+
+        while element != None:
+            element = element.next
+            counter += 1
+
+        return counter
+
