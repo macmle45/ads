@@ -4,8 +4,8 @@ from lds import (
                     CircularQueue, 
                     PriorityQueue, 
                     Deque,
-                    Node,
-                    LinkedList
+                    LinkedList,
+                    DoubleLinkedList
                 )
 
 
@@ -196,6 +196,16 @@ def linked_list_operations():
     print(linked_list.get_index(5))
 
 
+def double_linked_list_operations():
+    double_linked_list = DoubleLinkedList()
+
+    double_linked_list.insert_front(1)
+    double_linked_list.insert_front(2)
+    double_linked_list.insert_front(3)
+
+    print(double_linked_list)
+
+
 
 def main():
     # stack_opeartions()
@@ -204,7 +214,8 @@ def main():
     # circular_queue_operations()
     # priority_queue_operations()
     # deque_operations()
-    linked_list_operations()
+    # linked_list_operations()
+    double_linked_list_operations()
 
 
 if __name__ == '__main__':
