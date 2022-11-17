@@ -334,3 +334,15 @@ class LinkedList:
 
         return counter
 
+    def get_index(self, data):
+        element = self.head
+        counter = 0
+
+        while element.next is not None:
+            if element.item == data:
+                return counter
+            
+            element = element.next
+            counter += 1
+
+        return False
