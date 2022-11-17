@@ -238,11 +238,36 @@ class LinkedList:
             element.next = new_item
 
     def insert_middle(self, data, position):
-        pass
-            
+        # list is empty
+        # if not self.head:
+        #     self.head = Node(data)
+        # else:
+        #     new_item = Node(data)
 
-    def delete(self):
+        #     # traverse to element at given position
+        #     counter = 1
+        #     element = self.head
+
+        #     while counter < position:
+        #         if element.next != None:
+        #             element = element.next
+                
+        #         counter += 1
+                
+        #     new_item.next = element.next
+        #     element.next = new_item
         pass
+
+    def delete_front(self):
+        self.head = self.head.next
+
+    def delete_rear(self):
+        element = self.head
+
+        while element.next.next != None:
+            element = element.next
+
+        element.next = None
 
     def serach_list(self):
         pass
