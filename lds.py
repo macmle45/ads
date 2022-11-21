@@ -1,3 +1,6 @@
+from tools import measure_execution_time
+
+
 class Stack:
     def __init__(self, stack=[]):
         self.stack = stack
@@ -291,6 +294,7 @@ class LinkedList:
         
         return False
 
+    @measure_execution_time
     def sort_list(self):
         current = self.head
         index = None
