@@ -338,7 +338,14 @@ class HashTable:
     
     def insert(self, key: int, data):
         index = self.__HashFunction(key)
-        self.hash_table[index] = [key, data]
+
+        if self.hash_table[index] != []:
+            self.hash_table[index].insert_front([key, data])
+        else:
+            data_list = DoubleLinkedList()
+            data_list.insert_front([key, data])
+
+            self.hash_table[index] = data_list
 
 
     def remove(self, key):
@@ -347,5 +354,8 @@ class HashTable:
 
     
     def __str__(self) -> str:
-        return f'{self.hash_table}'
-
+        result = ''
+        for item in self.hash_table:
+            result += item.__str__() + '\n'
+        
+        return result
