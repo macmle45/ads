@@ -1,12 +1,16 @@
 from lds import (
                     Stack, 
                     Queue, 
-                    CircularQueue, 
-                    PriorityQueue, 
+                    CircularQueue,  
                     Deque,
                     LinkedList,
-                    DoubleLinkedList
+                    DoubleLinkedList,
+                    HashTable
                 )
+
+from non_lds import (PriorityQueue)
+
+import random
 
 
 def stack_opeartions():
@@ -122,6 +126,9 @@ def priority_queue_operations():
     print(f'Peek: {pq.peek}\n')
 
     print(f'Extract: {pq.extract}\n')
+
+    print(f'Peek: {pq.peek}\n')
+    
     print(f'Queue after extract (Max-Heap) operation: {pq}\n')
 
 
@@ -144,56 +151,60 @@ def deque_operations():
 def linked_list_operations():
     linked_list = LinkedList()
 
-    linked_list.insert_front(1)
-    linked_list.insert_front(2)
-    linked_list.insert_front(3)
-    linked_list.insert_front(4)
-    linked_list.insert_front(5)
+    # linked_list.insert_front(1)
+    # linked_list.insert_front(2)
+    # linked_list.insert_front(3)
+    # linked_list.insert_front(4)
+    # linked_list.insert_front(5)
 
-    print(f'Init linked list...\n{linked_list}\n')
+    for _ in range(0,100000):
+        linked_list.insert_front(random.randint(0, 9))
+
+    # print(f'Init linked list...\n{linked_list}\n')
     
-    linked_list.insert_middle(7, 2)
-    print(f'Insert element 7 at index 2\n{linked_list}\n')
+    # linked_list.insert_middle(7, 2)
+    # print(f'Insert element 7 at index 2\n{linked_list}\n')
 
-    linked_list.insert_middle(3, 2)
-    print(f'Insert element 3 at index 2\n{linked_list}\n')
+    # linked_list.insert_middle(3, 2)
+    # print(f'Insert element 3 at index 2\n{linked_list}\n')
 
-    linked_list.insert_middle(5, 2)
-    print(f'Insert element 5 at index 2\n{linked_list}\n')
+    # linked_list.insert_middle(5, 2)
+    # print(f'Insert element 5 at index 2\n{linked_list}\n')
 
-    linked_list.insert_middle(9, 2)
-    print(f'Insert element 9 at index 2\n{linked_list}\n')
+    # linked_list.insert_middle(9, 2)
+    # print(f'Insert element 9 at index 2\n{linked_list}\n')
 
-    linked_list.insert_middle(11, 3)
-    print(f'Insert element 11 at index 3\n{linked_list}\n')
+    # linked_list.insert_middle(11, 3)
+    # print(f'Insert element 11 at index 3\n{linked_list}\n')
 
-    linked_list.delete_front()
-    print(f'Delete element at front\n{linked_list}\n')
+    # linked_list.delete_front()
+    # print(f'Delete element at front\n{linked_list}\n')
 
-    linked_list.delete_rear()
-    print(f'Delete element from rear\n{linked_list}\n')
+    # linked_list.delete_rear()
+    # print(f'Delete element from rear\n{linked_list}\n')
 
-    linked_list.delete_middle(1)
-    print(f'Delete element at index 1\n{linked_list}\n')
+    # linked_list.delete_middle(1)
+    # print(f'Delete element at index 1\n{linked_list}\n')
     
-    linked_list.insert_middle(11, 1)
-    print(f'Insert element 11 at index 1\n{linked_list}\n')
+    # linked_list.insert_middle(11, 1)
+    # print(f'Insert element 11 at index 1\n{linked_list}\n')
 
-    linked_list.insert_middle(5, 2)
-    print(f'Insert element 5 at index 2\n{linked_list}\n')
+    # linked_list.insert_middle(5, 2)
+    # print(f'Insert element 5 at index 2\n{linked_list}\n')
 
-    linked_list.insert_middle(9, 4)
-    print(f'Insert element 9 at index 4\n{linked_list}\n')
+    # linked_list.insert_middle(9, 4)
+    # print(f'Insert element 9 at index 4\n{linked_list}\n')
 
-    print(f'Linked list length: {linked_list.length}\n')
+    # print(f'Linked list length: {linked_list.length}\n')
 
-    print(f'Searching element 56: {linked_list.search_list(56)}\n')
-    print(f'Searching element 11: {linked_list.search_list(11)}\n')
+    # print(f'Searching element 56: {linked_list.search_list(56)}\n')
+    # print(f'Searching element 11: {linked_list.search_list(11)}\n')
+
+    # print(f'Sorted:\n{linked_list}\n')
+    # print(linked_list.get_index(5))
 
     linked_list.sort_list()
-    print(f'Sorted:\n{linked_list}\n')
-
-    print(linked_list.get_index(5))
+    
 
 
 def double_linked_list_operations():
@@ -206,16 +217,31 @@ def double_linked_list_operations():
     print(double_linked_list)
 
 
+def hash_table_operations():
+    my_hash_table = HashTable(6)
+
+    my_hash_table.insert(123, 'Red Bull')
+    my_hash_table.insert(456, 'Ferrari')
+    my_hash_table.insert(375, 'Mercedes')
+    my_hash_table.insert(291, 'Alpine')
+    my_hash_table.insert(571, 'McLaren')
+    my_hash_table.insert(658, 'Aston')
+
+    print(my_hash_table)
+
+    # add removing from hash table
+
 
 def main():
     # stack_opeartions()
     # reverse_word()
     # queue_operations()
     # circular_queue_operations()
-    # priority_queue_operations()
+    priority_queue_operations()
     # deque_operations()
     # linked_list_operations()
-    double_linked_list_operations()
+    # double_linked_list_operations()
+    # hash_table_operations()
 
 
 if __name__ == '__main__':
