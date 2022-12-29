@@ -8,7 +8,7 @@ from lds import (
                     HashTable
                 )
 
-from non_lds import (PriorityQueue)
+from non_lds import (PriorityQueue, TreeNode, TreeTraversal)
 
 import random
 
@@ -128,7 +128,7 @@ def priority_queue_operations():
     print(f'Extract: {pq.extract}\n')
 
     print(f'Peek: {pq.peek}\n')
-    
+
     print(f'Queue after extract (Max-Heap) operation: {pq}\n')
 
 
@@ -157,7 +157,7 @@ def linked_list_operations():
     # linked_list.insert_front(4)
     # linked_list.insert_front(5)
 
-    for _ in range(0,100000):
+    for _ in range(0,10000):
         linked_list.insert_front(random.randint(0, 9))
 
     # print(f'Init linked list...\n{linked_list}\n')
@@ -204,6 +204,8 @@ def linked_list_operations():
     # print(linked_list.get_index(5))
 
     linked_list.sort_list()
+
+    print(linked_list)
     
 
 
@@ -218,6 +220,8 @@ def double_linked_list_operations():
 
 
 def hash_table_operations():
+    # add removing from hash table
+
     my_hash_table = HashTable(6)
 
     my_hash_table.insert(123, 'Red Bull')
@@ -229,19 +233,39 @@ def hash_table_operations():
 
     print(my_hash_table)
 
-    # add removing from hash table
 
+def tree_traversal():
+    # create tree
+    root = TreeNode(1)
+    root.left_child = TreeNode(2)
+    root.right_child = TreeNode(3)
+    root.left_child.left_child = TreeNode(4)
+    root.left_child.right_child = TreeNode(5)
 
+    travers = TreeTraversal()
+
+    print('Inorder')
+    travers.inorder(root)
+
+    print('\n\nPreorder')
+    travers.preorder(root)
+
+    print('\n\nPostorder')
+    travers.postorder(root)
+
+    
 def main():
     # stack_opeartions()
     # reverse_word()
     # queue_operations()
     # circular_queue_operations()
-    priority_queue_operations()
+    # priority_queue_operations()
     # deque_operations()
     # linked_list_operations()
     # double_linked_list_operations()
     # hash_table_operations()
+    tree_traversal()
+    # pass
 
 
 if __name__ == '__main__':
