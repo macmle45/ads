@@ -106,3 +106,30 @@ class PriorityQueue:
     def __str__(self) -> str:
         return f'{self.heap.array}'
     
+
+class TreeNode:
+    def __init__(self, value) -> None:
+        self.value = value
+        self.left_child = None
+        self.right_child = None
+
+
+class TreeTraversal:
+    def inorder(self, root):
+        if root:
+            self.inorder(root.left_child)
+            print(str(root.value) + '->', end='')
+            self.inorder(root.right_child)
+
+    def preorder(self, root):
+        if root:
+            print(str(root.value) + '->', end='')
+            self.preorder(root.left_child)
+            self.preorder(root.right_child)
+
+    def postorder(self, root):
+        if root:
+            self.postorder(root.left_child)
+            self.postorder(root.right_child)
+            print(str(root.value) + '->', end='')
+
