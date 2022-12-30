@@ -133,3 +133,16 @@ class TreeTraversal:
             self.postorder(root.right_child)
             print(str(root.value) + '->', end='')
 
+
+class BinaryTree:
+    def isFullTree(self, root):
+        if root is None:
+            return True
+        
+        if root.left_child is None and root.right_child is None:
+            return True
+        
+        if root.left_child is not None and root.right_child is not None:
+            return (self.isFullTree(root.left_child) and self.isFullTree(root.right_child))
+
+        return False
