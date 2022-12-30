@@ -8,7 +8,7 @@ from lds import (
                     HashTable
                 )
 
-from non_lds import (PriorityQueue, TreeNode, TreeTraversal)
+from non_lds import (PriorityQueue, TreeNode, TreeTraversal, BinaryTree)
 
 import random
 
@@ -253,6 +253,25 @@ def tree_traversal():
     print('\n\nPostorder')
     travers.postorder(root)
 
+
+def binary_tree_ops():
+    root = TreeNode(1)
+
+    root.left_child = TreeNode(2)
+    root.right_child = TreeNode(3)
+
+    root.left_child.left_child = TreeNode(4)
+    root.left_child.right_child = TreeNode(5)
+
+    root.left_child.right_child.left_child = TreeNode(6)
+    root.left_child.right_child.right_child = TreeNode(7)
+
+    bt = BinaryTree()
+
+    is_full_tree = bt.isFullTree(root)
+
+    print(is_full_tree)
+
     
 def main():
     # stack_opeartions()
@@ -264,7 +283,8 @@ def main():
     # linked_list_operations()
     # double_linked_list_operations()
     # hash_table_operations()
-    tree_traversal()
+    # tree_traversal()
+    binary_tree_ops()
     # pass
 
 
