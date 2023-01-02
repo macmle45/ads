@@ -172,3 +172,19 @@ class PerfectBinaryTree:
 
         return self.is_perfect(root.left_child, depth, level + 1) and self.is_perfect(root.right_child, depth, level + 1)
 
+
+class CompleteBinaryTree:
+    def count_nodes(self, root):
+        if root is None:
+            return 0
+        return (1 + self.count_nodes(root.left_child) + self.count_nodes(root.right_child))
+
+    def is_complete(self, root, index, number_nodes):
+        if root is None:
+            return True
+        
+        if index >= number_nodes:
+            return False
+
+        return self.is_complete(root.left_child, 2 * index + 1, number_nodes) and self.is_complete(root.right_child, 2 * index + 2, number_nodes)
+        
