@@ -8,7 +8,14 @@ from lds import (
                     HashTable
                 )
 
-from non_lds import (PriorityQueue, TreeNode, TreeTraversal, BinaryTree, PerfectBinaryTree)
+from non_lds import (
+                    PriorityQueue, 
+                    TreeNode, 
+                    TreeTraversal, 
+                    BinaryTree, 
+                    PerfectBinaryTree,
+                    CompleteBinaryTree
+                )
 
 import random
 
@@ -285,6 +292,41 @@ def perfect_binary_tree_ops():
 
     print(result)
 
+
+def complete_binary_tree_ops():
+    # create complete binary tree
+    root = TreeNode(1)
+
+    root.left_child = TreeNode(2)
+    root.right_child = TreeNode(3)
+    
+    root.left_child.left_child = TreeNode(4)
+    root.left_child.right_child = TreeNode(5)
+
+    root.left_child.left_child.left_child = TreeNode(7)
+    root.left_child.left_child.right_child = TreeNode(8)
+
+    root.left_child.right_child.left_child = TreeNode(9)
+    root.left_child.right_child.right_child = TreeNode(10)
+
+    root.right_child.left_child = TreeNode(6)
+    root.right_child.right_child = TreeNode(12)
+
+    root.right_child.left_child.left_child = TreeNode(11)
+    root.right_child.left_child.right_child = TreeNode(13)
+
+    root.right_child.right_child.left_child = TreeNode(14)
+    
+    # ops
+    cbt = CompleteBinaryTree()
+
+    nodes_number = cbt.count_nodes(root)
+    print(f'Nodes number: {nodes_number}')
+
+    index = 0
+    tree_is_complete = cbt.is_complete(root, index, nodes_number)
+    print(f'Tree is complete: {tree_is_complete}')
+
     
 def main():
     # stack_opeartions()
@@ -298,7 +340,8 @@ def main():
     # hash_table_operations()
     # tree_traversal()
     # binary_tree_ops()
-    perfect_binary_tree_ops()
+    # perfect_binary_tree_ops()
+    complete_binary_tree_ops()
     # pass
 
 
