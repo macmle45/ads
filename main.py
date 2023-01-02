@@ -8,7 +8,7 @@ from lds import (
                     HashTable
                 )
 
-from non_lds import (PriorityQueue, TreeNode, TreeTraversal, BinaryTree)
+from non_lds import (PriorityQueue, TreeNode, TreeTraversal, BinaryTree, PerfectBinaryTree)
 
 import random
 
@@ -272,6 +272,19 @@ def binary_tree_ops():
 
     print(is_full_tree)
 
+
+def perfect_binary_tree_ops():
+    root = TreeNode(1)
+    root.left_child = TreeNode(2)
+
+    pbt = PerfectBinaryTree()
+
+    tree_depth = pbt.calculateDepth(root)
+
+    result = pbt.is_perfect(root, tree_depth)
+
+    print(result)
+
     
 def main():
     # stack_opeartions()
@@ -284,7 +297,8 @@ def main():
     # double_linked_list_operations()
     # hash_table_operations()
     # tree_traversal()
-    binary_tree_ops()
+    # binary_tree_ops()
+    perfect_binary_tree_ops()
     # pass
 
 
