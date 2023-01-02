@@ -146,3 +146,29 @@ class BinaryTree:
             return (self.isFullTree(root.left_child) and self.isFullTree(root.right_child))
 
         return False
+
+
+class PerfectBinaryTree:
+    def calculateDepth(self, node):
+        depth = 0
+
+        while node is not None:
+            depth += 1
+            node = node.left_child
+        
+        return depth
+
+    def is_perfect(self, root, depth, level=0):
+        # check if the tree is empty
+        if root is None:
+            return True
+
+        # check the presence of trees
+        if root.left_child is None and root.right_child is None:
+            return (depth == level + 1)
+
+        if root.left_child is None or root.right_child is None:
+            return False
+
+        return self.is_perfect(root.left_child, depth, level + 1) and self.is_perfect(root.right_child, depth, level + 1)
+
