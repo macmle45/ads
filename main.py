@@ -14,7 +14,9 @@ from non_lds import (
                     TreeTraversal, 
                     BinaryTree, 
                     PerfectBinaryTree,
-                    CompleteBinaryTree
+                    CompleteBinaryTree,
+                    TreeHeight,
+                    BalancedBinaryTree
                 )
 
 import random
@@ -327,7 +329,26 @@ def complete_binary_tree_ops():
     tree_is_complete = cbt.is_complete(root, index, nodes_number)
     print(f'Tree is complete: {tree_is_complete}')
 
-    
+
+def balanced_binary_tree_ops() :
+    height = TreeHeight()
+    root = TreeNode(1)
+
+    root.left_child = TreeNode(2)
+    root.right_child = TreeNode(3)
+
+    root.left_child.left_child = TreeNode(4)
+    root.left_child.right_child = TreeNode(5)
+
+    root.left_child.right_child.left_child = TreeNode(6)
+
+    bbt = BalancedBinaryTree()
+
+    is_balanced = bbt.isHighhtBalanced(root, height)
+
+    print(f'The tree is balanced: {is_balanced}')
+
+
 def main():
     # stack_opeartions()
     # reverse_word()
@@ -341,7 +362,8 @@ def main():
     # tree_traversal()
     # binary_tree_ops()
     # perfect_binary_tree_ops()
-    complete_binary_tree_ops()
+    # complete_binary_tree_ops()
+    balanced_binary_tree_ops()
     # pass
 
 
