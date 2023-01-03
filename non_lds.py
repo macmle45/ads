@@ -187,4 +187,26 @@ class CompleteBinaryTree:
             return False
 
         return self.is_complete(root.left_child, 2 * index + 1, number_nodes) and self.is_complete(root.right_child, 2 * index + 2, number_nodes)
-        
+         
+
+class TreeHeight:
+    def __init__(self) -> None:
+        self.height = 0
+
+class BalancedBinaryTree:
+    def isHighhtBalanced(self, root: TreeNode, height: TreeHeight):
+        left_height = TreeHeight()
+        right_height = TreeHeight()
+
+        if root is None:
+            return True
+
+        l = self.isHighhtBalanced(root.left_child, left_height)
+        r = self.isHighhtBalanced(root.right_child, right_height)
+
+        height.height = max(left_height.height, right_height.height) + 1
+
+        if abs(left_height.height - right_height.height) <= 1:
+            return l and r
+
+        return False
