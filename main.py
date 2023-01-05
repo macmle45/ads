@@ -1,12 +1,28 @@
 from lds import (
                     Stack, 
                     Queue, 
-                    CircularQueue, 
-                    PriorityQueue, 
+                    CircularQueue,  
                     Deque,
                     LinkedList,
-                    DoubleLinkedList
+                    DoubleLinkedList,
+                    HashTable
                 )
+
+from non_lds import (
+                    PriorityQueue, 
+                    TreeNode, 
+                    TreeTraversal, 
+                    BinaryTree, 
+                    PerfectBinaryTree,
+                    CompleteBinaryTree,
+                    TreeHeight,
+                    BalancedBinaryTree,
+                    BinarySearchTree
+                )
+
+# from sorting_algorithms import SortingAlgorithms
+
+import random
 
 
 def stack_opeartions():
@@ -122,6 +138,9 @@ def priority_queue_operations():
     print(f'Peek: {pq.peek}\n')
 
     print(f'Extract: {pq.extract}\n')
+
+    print(f'Peek: {pq.peek}\n')
+
     print(f'Queue after extract (Max-Heap) operation: {pq}\n')
 
 
@@ -144,56 +163,62 @@ def deque_operations():
 def linked_list_operations():
     linked_list = LinkedList()
 
-    linked_list.insert_front(1)
-    linked_list.insert_front(2)
-    linked_list.insert_front(3)
-    linked_list.insert_front(4)
-    linked_list.insert_front(5)
+    # linked_list.insert_front(1)
+    # linked_list.insert_front(2)
+    # linked_list.insert_front(3)
+    # linked_list.insert_front(4)
+    # linked_list.insert_front(5)
 
-    print(f'Init linked list...\n{linked_list}\n')
+    for _ in range(0,10000):
+        linked_list.insert_front(random.randint(0, 9))
+
+    # print(f'Init linked list...\n{linked_list}\n')
     
-    linked_list.insert_middle(7, 2)
-    print(f'Insert element 7 at index 2\n{linked_list}\n')
+    # linked_list.insert_middle(7, 2)
+    # print(f'Insert element 7 at index 2\n{linked_list}\n')
 
-    linked_list.insert_middle(3, 2)
-    print(f'Insert element 3 at index 2\n{linked_list}\n')
+    # linked_list.insert_middle(3, 2)
+    # print(f'Insert element 3 at index 2\n{linked_list}\n')
 
-    linked_list.insert_middle(5, 2)
-    print(f'Insert element 5 at index 2\n{linked_list}\n')
+    # linked_list.insert_middle(5, 2)
+    # print(f'Insert element 5 at index 2\n{linked_list}\n')
 
-    linked_list.insert_middle(9, 2)
-    print(f'Insert element 9 at index 2\n{linked_list}\n')
+    # linked_list.insert_middle(9, 2)
+    # print(f'Insert element 9 at index 2\n{linked_list}\n')
 
-    linked_list.insert_middle(11, 3)
-    print(f'Insert element 11 at index 3\n{linked_list}\n')
+    # linked_list.insert_middle(11, 3)
+    # print(f'Insert element 11 at index 3\n{linked_list}\n')
 
-    linked_list.delete_front()
-    print(f'Delete element at front\n{linked_list}\n')
+    # linked_list.delete_front()
+    # print(f'Delete element at front\n{linked_list}\n')
 
-    linked_list.delete_rear()
-    print(f'Delete element from rear\n{linked_list}\n')
+    # linked_list.delete_rear()
+    # print(f'Delete element from rear\n{linked_list}\n')
 
-    linked_list.delete_middle(1)
-    print(f'Delete element at index 1\n{linked_list}\n')
+    # linked_list.delete_middle(1)
+    # print(f'Delete element at index 1\n{linked_list}\n')
     
-    linked_list.insert_middle(11, 1)
-    print(f'Insert element 11 at index 1\n{linked_list}\n')
+    # linked_list.insert_middle(11, 1)
+    # print(f'Insert element 11 at index 1\n{linked_list}\n')
 
-    linked_list.insert_middle(5, 2)
-    print(f'Insert element 5 at index 2\n{linked_list}\n')
+    # linked_list.insert_middle(5, 2)
+    # print(f'Insert element 5 at index 2\n{linked_list}\n')
 
-    linked_list.insert_middle(9, 4)
-    print(f'Insert element 9 at index 4\n{linked_list}\n')
+    # linked_list.insert_middle(9, 4)
+    # print(f'Insert element 9 at index 4\n{linked_list}\n')
 
-    print(f'Linked list length: {linked_list.length}\n')
+    # print(f'Linked list length: {linked_list.length}\n')
 
-    print(f'Searching element 56: {linked_list.search_list(56)}\n')
-    print(f'Searching element 11: {linked_list.search_list(11)}\n')
+    # print(f'Searching element 56: {linked_list.search_list(56)}\n')
+    # print(f'Searching element 11: {linked_list.search_list(11)}\n')
+
+    # print(f'Sorted:\n{linked_list}\n')
+    # print(linked_list.get_index(5))
 
     linked_list.sort_list()
-    print(f'Sorted:\n{linked_list}\n')
 
-    print(linked_list.get_index(5))
+    print(linked_list)
+    
 
 
 def double_linked_list_operations():
@@ -206,6 +231,144 @@ def double_linked_list_operations():
     print(double_linked_list)
 
 
+def hash_table_operations():
+    # add removing from hash table
+
+    my_hash_table = HashTable(6)
+
+    my_hash_table.insert(123, 'Red Bull')
+    my_hash_table.insert(456, 'Ferrari')
+    my_hash_table.insert(375, 'Mercedes')
+    my_hash_table.insert(291, 'Alpine')
+    my_hash_table.insert(571, 'McLaren')
+    my_hash_table.insert(658, 'Aston')
+
+    print(my_hash_table)
+
+
+def tree_traversal():
+    # create tree
+    root = TreeNode(1)
+    root.left_child = TreeNode(2)
+    root.right_child = TreeNode(3)
+    root.left_child.left_child = TreeNode(4)
+    root.left_child.right_child = TreeNode(5)
+
+    travers = TreeTraversal()
+
+    print('Inorder')
+    travers.inorder(root)
+
+    print('\n\nPreorder')
+    travers.preorder(root)
+
+    print('\n\nPostorder')
+    travers.postorder(root)
+
+
+def binary_tree_ops():
+    root = TreeNode(1)
+
+    root.left_child = TreeNode(2)
+    root.right_child = TreeNode(3)
+
+    root.left_child.left_child = TreeNode(4)
+    root.left_child.right_child = TreeNode(5)
+
+    root.left_child.right_child.left_child = TreeNode(6)
+    root.left_child.right_child.right_child = TreeNode(7)
+
+    bt = BinaryTree()
+
+    is_full_tree = bt.isFullTree(root)
+
+    print(is_full_tree)
+
+
+def perfect_binary_tree_ops():
+    root = TreeNode(1)
+    root.left_child = TreeNode(2)
+
+    pbt = PerfectBinaryTree()
+
+    tree_depth = pbt.calculateDepth(root)
+
+    result = pbt.is_perfect(root, tree_depth)
+
+    print(result)
+
+
+def complete_binary_tree_ops():
+    # create complete binary tree
+    root = TreeNode(1)
+
+    root.left_child = TreeNode(2)
+    root.right_child = TreeNode(3)
+    
+    root.left_child.left_child = TreeNode(4)
+    root.left_child.right_child = TreeNode(5)
+
+    root.left_child.left_child.left_child = TreeNode(7)
+    root.left_child.left_child.right_child = TreeNode(8)
+
+    root.left_child.right_child.left_child = TreeNode(9)
+    root.left_child.right_child.right_child = TreeNode(10)
+
+    root.right_child.left_child = TreeNode(6)
+    root.right_child.right_child = TreeNode(12)
+
+    root.right_child.left_child.left_child = TreeNode(11)
+    root.right_child.left_child.right_child = TreeNode(13)
+
+    root.right_child.right_child.left_child = TreeNode(14)
+    
+    # ops
+    cbt = CompleteBinaryTree()
+
+    nodes_number = cbt.count_nodes(root)
+    print(f'Nodes number: {nodes_number}')
+
+    index = 0
+    tree_is_complete = cbt.is_complete(root, index, nodes_number)
+    print(f'Tree is complete: {tree_is_complete}')
+
+
+def balanced_binary_tree_ops() :
+    height = TreeHeight()
+    root = TreeNode(1)
+
+    root.left_child = TreeNode(2)
+    root.right_child = TreeNode(3)
+
+    root.left_child.left_child = TreeNode(4)
+    root.left_child.right_child = TreeNode(5)
+
+    root.left_child.right_child.left_child = TreeNode(6)
+
+    bbt = BalancedBinaryTree()
+
+    is_balanced = bbt.isHighhtBalanced(root, height)
+
+    print(f'The tree is balanced: {is_balanced}')
+
+
+# def bouble_sort():
+#     sa = SortingAlgorithms()
+
+#     elements = [3, 7, 4, 5, 1, 9, 10, 5]
+
+#     sa.bouble_sort(elements)
+
+
+def bst_ops():
+    data = [6,9,1,4,5,7,3,2,10]
+    bst = BinarySearchTree(data)
+
+    bst.preorder_traverse(bst.root)
+
+    print(f'Root: {bst.root.value}')
+
+
 
 def main():
     # stack_opeartions()
@@ -215,7 +378,15 @@ def main():
     # priority_queue_operations()
     # deque_operations()
     # linked_list_operations()
-    double_linked_list_operations()
+    # double_linked_list_operations()
+    # hash_table_operations()
+    # tree_traversal()
+    # binary_tree_ops()
+    # perfect_binary_tree_ops()
+    # complete_binary_tree_ops()
+    # balanced_binary_tree_ops()
+    bst_ops()
+    # pass
 
 
 if __name__ == '__main__':
