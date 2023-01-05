@@ -16,8 +16,11 @@ from non_lds import (
                     PerfectBinaryTree,
                     CompleteBinaryTree,
                     TreeHeight,
-                    BalancedBinaryTree
+                    BalancedBinaryTree,
+                    BinarySearchTree
                 )
+
+# from sorting_algorithms import SortingAlgorithms
 
 import random
 
@@ -349,6 +352,24 @@ def balanced_binary_tree_ops() :
     print(f'The tree is balanced: {is_balanced}')
 
 
+# def bouble_sort():
+#     sa = SortingAlgorithms()
+
+#     elements = [3, 7, 4, 5, 1, 9, 10, 5]
+
+#     sa.bouble_sort(elements)
+
+
+def bst_ops():
+    data = [6,9,1,4,5,7,3,2,10]
+    bst = BinarySearchTree(data)
+
+    bst.preorder_traverse(bst.root)
+
+    print(f'Root: {bst.root.value}')
+
+
+
 def main():
     # stack_opeartions()
     # reverse_word()
@@ -363,7 +384,8 @@ def main():
     # binary_tree_ops()
     # perfect_binary_tree_ops()
     # complete_binary_tree_ops()
-    balanced_binary_tree_ops()
+    # balanced_binary_tree_ops()
+    bst_ops()
     # pass
 
 

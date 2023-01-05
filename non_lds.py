@@ -210,3 +210,55 @@ class BalancedBinaryTree:
             return l and r
 
         return False
+
+
+class BinarySearchTree:
+    def __init__(self, data) -> None:
+        self.root = None
+
+        for val in data:
+            self.root = self.insert(self.root, val)
+            
+
+    def insertNode(self, node: TreeNode, val):
+        if node is None:
+            return TreeNode(val)
+        
+        if val < node.value:
+            node.left_child = self.insert(node.left_child, val)
+        else:
+            node.right_child = self.insert(node.right_child, val)
+
+        return node
+
+
+    def deleteNode(self, root: TreeNode, val):
+        if root is None:
+            return root
+
+        if val < root.value:
+            root.left_child = self.deleteNode(root.left_child, val)
+        elif val > root.value:
+            root.right_child = self.deleteNode(root.right_child, val)
+        else:
+            if root.left_child is None:
+                temp = root.right_child
+                root = None
+                return temp
+            elif root.right_child is None:
+                temp = root.left_child
+                root = None
+                return temp
+
+
+        
+
+
+    def preorder_traverse(self, root: TreeNode):
+        if root is not None:
+            print(str(root.value) + ' ->', end=' ')
+            self.preorder_traverse(root.left_child)
+            self.preorder_traverse(root.right_child)
+
+        
+            
